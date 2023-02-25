@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "rest_framework_simplejwt",
     "corsheaders",
     "users",
     "ads",
@@ -82,9 +83,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "skymarket.wsgi.application"
 
-# TODO здесь мы настраиваем аутентификацию и пагинацию
+# Настраиваем аутентификацию и пагинацию
 REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    ]
 }
 # TODO здесь мы настраиваем Djoser
 DJOSER = {
@@ -143,6 +147,7 @@ USE_TZ = True
 STATIC_URL = "/django_static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "django_static")
 
+# пути для картинок
 MEDIA_URL = "/django_media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "django_media")
 
@@ -164,3 +169,11 @@ EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp.gmail.com")
 EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 EMAIL_PORT = os.environ.get("EMAIL_PORT")
+
+# настройка документации
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Skymarket API',
+    'DESCRIPTION': 'Course work project',
+    'VERSION': '1.0.0',
+}
+
