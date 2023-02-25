@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "course-work-6"
+version = "0.1.0"
+description = "Course Work 6"
+authors = ["saixfix <maxim-grishins@mail.ru>"]
+readme = "README.md"
+packages = [{include = "course_work_6"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
