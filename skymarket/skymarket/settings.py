@@ -44,10 +44,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "rest_framework",
     "corsheaders",
-    "drp_spectacular",
     "users",
     "ads",
     "redoc",
+    "drf_spectacular",
 ]
 
 
